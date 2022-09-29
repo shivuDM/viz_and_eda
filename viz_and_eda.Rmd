@@ -68,7 +68,7 @@ weather_df %>%
 
 ```
 
-```{r don't do this in practical}
+```{r do not do this in practical}
 weather_df %>%
   ggplot(aes(x = tmin, y = tmax, color = name)) + geom_smooth(se = FALSE)
 
@@ -91,5 +91,12 @@ weather_df %>%
 ```{r}
 weather_df %>%
   ggplot(aes(x = date, y = tmax, color = name)) + geom_point(aes(size = prcp),alpha = 0.3) + geom_smooth(se = FALSE)+ facet_grid(. ~ name)
+```
+
+## quick stuff
+
+```{r}
+weather_df %>%
+  ggplot(aes(x = tmin, y = tmax)) + geom_hex()
 ```
 
