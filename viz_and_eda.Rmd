@@ -144,7 +144,7 @@ WEATHER_SCATTERPLOT =
 
 WEATHER_SCATTERPLOT
 
-ggsave(results/WEATHER_SCATTERPLOT_pdf, WEATHER_SCATTERPLOT, width = 8, height = 5)
+ggsave("results/WEATHER_SCATTERPLOT_pdf", WEATHER_SCATTERPLOT, width = 8, height = 5)
 ```
 
 ```{r}
