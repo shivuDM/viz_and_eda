@@ -39,7 +39,7 @@ ggplot (weather_df, aes(x = tmin, y = tmax)) + geom_point()
 weather_df %>%
 drop_na() %>%
   filter(name == "CentralPark_NY") %>%
-ggplot (weather_df, aes(x = tmin, y = tmax)) + geom_point()
+ggplot(aes(x = tmin, y = tmax)) + geom_point()
 ```
 
 ```{r}
@@ -98,5 +98,38 @@ weather_df %>%
 ```{r}
 weather_df %>%
   ggplot(aes(x = tmin, y = tmax)) + geom_hex()
+```
+
+## univariate
+
+```{r}
+weather_df %>%
+  ggplot(aes(x = tmax, fill = name)) + geom_histogram() + facet_grid(. ~ name)
+```
+
+## more options
+
+```{r}
+weather_df %>%
+  ggplot(aes(x = tmax, fill = name)) + geom_density(alpha = .3)
+```
+
+## boxplots
+
+```{r}
+weather_df %>%
+  ggplot(aes(x = name, y = tmax, fill = name)) + geom_boxplot()
+```
+
+```{r}
+weather_df %>%
+  ggplot(aes(x = name, y = tmax, fill = name)) + geom_violin()
+```
+
+or 
+
+```{r}
+weather_df %>%
+  ggplot(aes(x = tmax, y = name)) + geom_density_ridges()
 ```
 
